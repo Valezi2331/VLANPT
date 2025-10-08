@@ -1,0 +1,168 @@
+SWITCH 1//////////////////
+
+vlan 10
+name adm
+!
+vlan 20
+name cdp
+!
+vlan 30
+name contabilidade
+!
+vlan 99
+name t.i
+!
+vlan 100
+name native
+!
+int f0/1
+sw mo ac
+sw ac vlan 10
+!
+int f0/2
+sw mo ac
+sw ac vlan 20
+!
+int f0/3
+sw mo ac
+sw ac vlan 30
+!
+int vlan 99
+ip address 192.168.1.250 255.255.255.0
+no shut
+!
+int g0/1
+sw mo dynamic desirable
+sw trun native vlan 100
+!
+int g0/1
+sw trun native vlan 100
+
+SWITCH 2/////////////////
+
+vlan 10
+name adm
+!
+vlan 20
+name cdp
+!
+vlan 30
+name contabilidade
+!
+vlan 99
+name t.i
+!
+vlan 100
+name native
+!
+int f0/1
+sw mo ac
+sw ac vlan 10
+!
+int f0/2
+sw mo ac
+sw ac vlan 20
+!
+int f0/3
+sw mo ac
+sw ac vlan 30
+!
+int vlan 99
+ip address 192.168.1.251 255.255.255.0
+no shut
+!
+int g0/1
+sw mo dynamic desirable
+sw trun native vlan 100
+!
+int g0/1
+sw trun native vlan 100
+
+
+Switch 3//////////////////////////
+
+vlan 10
+name adm
+!
+vlan 20
+name cdp
+!
+vlan 30
+name contabilidade
+!
+vlan 99
+name t.i
+!
+vlan 100
+name native
+!
+int f0/1
+sw mo ac
+sw ac vlan 10
+!
+int f0/2
+sw mo ac
+sw ac vlan 20
+!
+int f0/3
+sw mo ac
+sw ac vlan 30
+!
+int vlan 99
+ip address 192.168.1.251 255.255.255.0
+no shut
+!
+int g0/1
+sw mo dynamic desirable
+sw trun native vlan 100
+!
+int g0/1
+sw trun native vlan 100
+!
+int g0/2
+sw mo dynamic desirable
+sw trun native vlan 100
+!
+int g0/2
+sw trun native vlan 100
+
+
+Switch 4/////////////////////////////
+
+vlan 10
+name adm
+!
+vlan 20
+name cdp
+!
+vlan 30
+name contabilidade
+!
+vlan 99
+name t.i
+!
+vlan 100
+name native
+!
+int f0/1
+sw mo ac
+sw ac vlan 10
+!
+int f0/2
+sw mo ac
+sw ac vlan 20
+!
+int f0/3
+sw mo ac
+sw ac vlan 30
+!
+int vlan 99
+ip address 192.168.1.251 255.255.255.0
+no shut
+!
+int g0/1
+sw mo dynamic desirable
+sw trun native vlan 100
+!
+int g0/1
+sw trun native vlan 100

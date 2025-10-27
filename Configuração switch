@@ -1,0 +1,152 @@
+S1
+!
+!
+hostname S1
+!
+!
+!
+vlan 10
+name CONT
+vlan 20
+name VENDAS
+vlan 30
+name ADM
+!
+!
+int f0/1
+sw mo ac
+sw ac vlan 10
+ip default-gateway 192.168.10.1
+!
+int f0/2
+sw mo ac
+sw ac vlan 20
+ip default-gateway 192.168.20.1
+!
+int f0/3
+sw mo ac
+sw ac vlan 30
+ip default-gateway 192.168.30.1
+!
+!
+int f0/4
+sw mo tru
+sw tru nat vlan 99
+sw tru all vlan 10,20,30,99
+sw tru encap dot1q
+sw nonegotiate
+!
+!
+!
+S2
+!
+!
+hostname S2
+!
+!
+!
+vlan 10
+name CONT
+vlan 20
+name VENDAS
+vlan 30
+name ADM
+!
+int f0/1
+sw mo ac
+sw ac vlan 10
+ip default-gateway 192.168.10.1
+!
+int f0/2
+sw mo ac
+sw ac vlan 20
+ip default-gateway 192.168.20.1
+!
+int f0/3
+sw mo ac
+sw ac vlan 30
+ip default-gateway 192.168.30.1
+!
+!
+int g0/2
+sw mo tru
+sw tru nat vlan 99
+sw tru all vlan 10,20,30,99
+sw tru encap dot1q
+sw nonegotiate
+!
+!
+!
+S3
+!
+!
+hostname S3
+!
+!
+!
+vlan 10
+name CONT
+vlan 20
+name VENDAS
+vlan 30
+name ADM
+!
+int f0/1
+sw mo ac
+sw ac vlan 10
+ip default-gateway 192.168.11.1
+!
+int f0/2
+sw mo ac
+sw ac vlan 20
+ip default-gateway 192.168.21.1
+!
+int f0/3
+sw mo ac
+sw ac vlan 30
+ip default-gateway 192.168.31.1
+!
+int g0/2
+sw mo tru
+sw tru nat vlan 99
+sw tru all vlan 10,20,30,99
+sw tru encap dot1q
+sw nonegotiate
+!
+!
+!
+S4
+!
+!
+hostname S4
+!
+!
+!
+vlan 10
+name CONT
+vlan 20
+name VENDAS
+vlan 30
+name ADM
+!
+int f0/4
+sw mo tru
+sw tru nat vlan 99
+sw tru all vlan 10,20,30,99
+sw nonegotiate
+!
+int g0/1
+sw mo tru
+sw tru nat vlan 99
+sw tru all vlan 10,20,30,99
+sw nonegotiate
+!
+int g0/2
+sw mo tru
+sw tru nat vlan 99
+sw tru all vlan 10,20,30,99
+sw tru encap dot1q
+sw nonegotiate
+
+
+
